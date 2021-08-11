@@ -3,7 +3,7 @@ import {
     ADD_TO_NOTES,
     REMOVE_FROM_NOTES,
     // TOGGLE_NOTE
-  } from "./actions";
+  } from "../actions";
   
   const initialState = {
     notes: [],
