@@ -15,7 +15,6 @@ export default function App(){
                     <Route exact path="/add-notes" component={AddNote}/>
                     <Route exact path="/view-notes" component={ViewNotes}/>
                     <Route path="/edit-note/:id"/>
-
                 </Switch>
             </Router>
         </section>
