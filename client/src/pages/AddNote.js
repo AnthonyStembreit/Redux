@@ -1,22 +1,31 @@
 import React from 'react';
-import { INCREMENT, DECREMENT } from '../utils/actions';
+import { INCREMENT, DECREMENT, TOGGLE } from '../utils/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 function AddNote() {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-    function increment(){
+    function increment() {
         dispatch({ type: INCREMENT });
     }
-    function decrement(){
+    function decrement() {
         dispatch({ type: DECREMENT });
     }
+    function toggle() {
+        dispatch({ type: TOGGLE });
+    }
+    
     return (
         <div>
-            <button onClick={increment}>+</button>
-            <p>{state.counter}</p>
-            <button onClick={decrement}>-</button>
+            <section>
+                <button onClick={increment}>+</button>
+                <p>{state.counter}</p>
+                <button onClick={decrement}>-</button>
+            </section> 
+            <section>
+                <button onClick={toggle}>{state.toggle ? "true" : "false"}</button>
+            </section>
         </div>
     )
 }
