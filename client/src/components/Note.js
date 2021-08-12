@@ -26,7 +26,7 @@ export default function Note(props) {
             <h2>{props.note.title}</h2>
             <p>{props.note.description}</p>
             <button value={props.note.id} onClick={deleteNote}>Delete</button>
-            <button value={props.note.id} onClick={updateToggle}>Update</button>
+            <button value={props.note.id} onClick={updateToggle}>Edit</button>
         </div>
     )
 }
