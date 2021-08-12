@@ -6,13 +6,16 @@ import { useDispatch, useSelector } from 'react-redux';
 function AddNote() {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
-    function increment() {
+    function increment(e) {
+        e.preventDefault();
         dispatch({ type: INCREMENT });
     }
-    function decrement() {
+    function decrement(e) {
+        e.preventDefault();
         dispatch({ type: DECREMENT });
     }
-    function toggle() {
+    function toggle(e) {
+        e.preventDefault();
         dispatch({ type: TOGGLE });
     }
     
