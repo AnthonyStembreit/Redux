@@ -1,54 +1,25 @@
 import {
-    UPDATE_NOTE,
-    ADD_TO_NOTES,
-    REMOVE_FROM_NOTES,
-    // TOGGLE_NOTE
-  } from "../actions";
+  INCREMENT,
+  DECREMENT
+  } from "./actions";
   
   const initialState = {
-    notes: [],
-    noteOpen: false
+    counter: 0
   };
 
 export const reducers = (state = initialState, action) => {
     switch (action.type) {
-      case UPDATE_NOTE:
-        let newState = state.notes.map(note => {
-            if(note._id === action._id){
-                return action
-            }
-            else{
-                return note
-            }
-          });
+      case INCREMENT:
         return {
           ...state,
-          notes: newState,
+          counter: state.counter + 1
         };
-
-    // case TOGGLE_NOTE:
-    //   return {
-    //     ...state,
-    //     cartOpen: !state.cartOpen
-    //   };
   
-      case ADD_TO_NOTES:
+      case DECREMENT:
         return {
           ...state,
-          notes: [...state.cart, action.note],
+          counter: state.counter - 1
         };
-
-  
-      case REMOVE_FROM_NOTES:
-        let newState = state.notes.filter(note => {
-          return note._id !== action._id;
-        });
-  
-        return {
-          ...state,
-          notes: newState
-        };
-  
       default:
         return state;
     }
