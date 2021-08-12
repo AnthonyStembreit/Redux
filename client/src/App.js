@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 
 import AddNote from './pages/AddNote';
+import ViewNotes from './pages/View-Notes'
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
 
             <Provider store={store}>
                 <AddNote />
+                <ViewNotes/>
             </Provider>
 
         </div>

@@ -1,8 +1,16 @@
-import {React} from 'react';
+import React from 'react';
 
+import { useSelector } from 'react-redux';
+import Note from '../components/Note';
 
-export default function ViewNotes(){
+export default function ViewNotes() {
+    
+    const state = useSelector(state => state);
     return (
-        <p>view all notes</p>
+        <div>
+            {state.notes.map(note => {
+                return <Note note={note} />
+            })}
+        </div>
     )
 }

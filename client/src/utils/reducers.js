@@ -6,7 +6,8 @@ import {
 
 const initialState = {
   counter: 0,
-  toggle: false
+  toggle: false,
+  notes: ["text", "note2", "more"]
 };
 
 export const reducers = (state = initialState, action) => {
