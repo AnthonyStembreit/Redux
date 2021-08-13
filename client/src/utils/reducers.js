@@ -88,6 +88,20 @@ export const reducers = (state = initialState, action) => {
           ...state,
           form: action.formData
         }
+      case UPDATE_NOTE:
+        let newNotes = state.notes.map(note =>{
+          if(note.id === state.form.id){
+            return ({...state.form, update:false})
+          }
+         else{
+           return note
+         }
+        })
+         return{
+           ...state,
+           notes: newNotes
+         }
+        
     default:
       return state;
   }
