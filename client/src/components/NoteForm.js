@@ -17,17 +17,21 @@ export default function NoteForm(props) {
   function updateNote(){
     dispatch({type: UPDATE_NOTE})
   }
+  function createNote(e){
+    e.preventDefault();
+    dispatch({type:CREATE_NOTE})
+  }
   return (
     <form id="new-note-form">
       <label for="note-title" >Title</label>
       <input id="note-title" value={state.form.title} onChange={handleChange}></input>
       <label for="note-content">Note Content</label>
       <textarea id="note-content" value={state.form.description} onChange={handleChange}></textarea>
-      {props ? <div className="footer">
+      {props.update ? <div className="footer">
         <button type="submit" value={state.form.id} onClick={updateNote}>Update</button>
         <button value={state.form.id} onClick={props.update}>Nevermind</button>
       </div> :
-        <button type="submit">Create</button>}
+        <button type="submit" onClick={createNote}>Create</button>}
     </form>
   )
 }
