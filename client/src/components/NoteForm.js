@@ -20,6 +20,8 @@ export default function NoteForm(props) {
   function createNote(e){
     e.preventDefault();
     dispatch({type:CREATE_NOTE})
+    document.getElementById("note-title").value = ""
+    document.getElementById("note-content").value = ""
   }
   return (
     <form id="new-note-form">
