@@ -3,12 +3,20 @@ import {
   DECREMENT,
   TOGGLE,
   DELETE_NOTE,
-  UPDATE_TOGGLE
+  UPDATE_TOGGLE, 
+  FORM_CHANGE,
+  UPDATE_NOTE,
+  CREATE_NOTE
 } from "./actions";
 
 const initialState = {
   counter: 0,
   toggle: false,
+  form: {
+    id: Number,
+    title: "",
+    description: ""
+  },
   notes: [{
     id: 1,
     update: false,
@@ -70,11 +78,16 @@ export const reducers = (state = initialState, action) => {
           return note
         }
       })
-      console.log(toggleArr)
       return {
         ...state,
         notes: toggleArr
       };
+      case FORM_CHANGE:
+        console.log(action.formData)
+        return{
+          ...state,
+          form: action.formData
+        }
     default:
       return state;
   }
