@@ -9,8 +9,8 @@ export default function NoteForm(props) {
   function handleChange(){
     let formData = {
         id: state.form.id,
-        title: document.getElementById("note-title").value,
-        description: document.getElementById("note-content").value,
+        title: document.querySelector(".note-title").value,
+        description: document.querySelector(".note-content").value,
     }
     dispatch({type: FORM_CHANGE, formData})
   }
@@ -20,15 +20,15 @@ export default function NoteForm(props) {
   function createNote(e){
     e.preventDefault();
     dispatch({type:CREATE_NOTE})
-    document.getElementById("note-title").value = ""
-    document.getElementById("note-content").value = ""
+    document.querySelectorAll(".note-title").value = ""
+    document.querySelectorAll(".note-content").value = ""
   }
   return (
     <form id="new-note-form">
       <label for="note-title" >Title</label>
-      <input id="note-title" value={state.form.title} onChange={handleChange}></input>
+      <input className="note-title" name="note-title" value={state.form.title} onChange={handleChange}></input>
       <label for="note-content">Note Content</label>
-      <textarea id="note-content" value={state.form.description} onChange={handleChange}></textarea>
+      <textarea className="note-content"  name="note-content" value={state.form.description} onChange={handleChange}></textarea>
       {props.update ? <div className="footer">
         <button type="submit" value={state.form.id} onClick={updateNote}>Update</button>
         <button value={state.form.id} onClick={props.update}>Nevermind</button>

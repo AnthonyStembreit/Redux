@@ -1,7 +1,4 @@
 import {
-  INCREMENT,
-  DECREMENT,
-  TOGGLE,
   DELETE_NOTE,
   UPDATE_TOGGLE, 
   FORM_CHANGE,
@@ -17,34 +14,16 @@ const initialState = {
     title: "",
     description: ""
   },
-  notes: []
+  notes: JSON.parse(localStorage.getItem("notes")) ?  JSON.parse(localStorage.getItem("notes")) : []
 };
 
 export const reducers = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
-      return {
-        ...state,
-        counter: state.counter + 1
-      };
-
-    case DECREMENT:
-      return {
-        ...state,
-        counter: state.counter - 1
-      };
-
-    case TOGGLE:
-      let newToggle = state.toggle ? false : true
-      return {
-        ...state,
-        toggle: newToggle
-      };
-
     case DELETE_NOTE:
       let newNoteArr = state.notes.filter(note => {
         return note.id !== action.note_id;
       })
+      localStorage.setItem("notes", JSON.stringify(newNoteArr))
       return {
         ...state,
         notes: newNoteArr
@@ -81,6 +60,7 @@ export const reducers = (state = initialState, action) => {
            return note
          }
         })
+        localStorage.setItem("notes", JSON.stringify(updatedNotes))
          return{
            ...state,
            notes: updatedNotes
@@ -89,6 +69,7 @@ export const reducers = (state = initialState, action) => {
       case CREATE_NOTE: 
          let newNote = state.notes
          newNote[newNote.length] = ({...state.form, update: false, id: newNote.length + 1 })
+         localStorage.setItem("notes", JSON.stringify(newNote))
          return{
            ...state,
            notes: newNote
