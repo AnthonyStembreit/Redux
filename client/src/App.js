@@ -7,6 +7,7 @@ import store from './utils/store';
 import AddNote from './pages/AddNote';
 import ViewNotes from './pages/View-Notes';
 import NavBar from './components/Nav-Bar';
+import './style.css'
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
                 <h1>Redux Counter</h1>
                 <NavBar/>
             </header>
-            <div>
+            <div id="component-body">
                 <Provider store={store}>
                     <Switch>
                         <Route exact path="/" component={AddNote} />

@@ -1,0 +1,55 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#nav{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+}
+#nav a, button{
+    text-decoration: none;
+    background-color: rgb(152, 198, 240);
+    color: black;
+    border-radius: 5px;
+    padding:5px;
+    font-size: 32px;
+}
+#nav a:hover, button:hover{
+    background-color: rgb(83, 64, 92);
+    color: rgb(152, 198, 240);
+}
+#component-body{
+    display: flex;
+    justify-content: center;
+    padding: 5%
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+    text-align: center;
+    background-color:  rgb(168, 119, 190);
+    padding: 20px;
+    border-radius: 8px;
+}
+label{
+    font-size: 28px;
+    font-weight: 550;
+}
+input{
+    padding:12px;
+    font-size:22px;
+    margin-bottom: 15px;
+}
+textarea{
+    padding: 12px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+button{
+    border:none;
+}

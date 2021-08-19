@@ -25,7 +25,7 @@ export default function NoteForm(props) {
   return (
     <form id="new-note-form">
       <label htmlFor="note-title">Title</label>
-      <input className="note-title" name="note-title" value={state.form.title} onChange={handleChange}></input>
+      <input type="text" className="note-title" name="note-title" value={state.form.title} onChange={handleChange}></input>
       <label htmlFor="note-content">Note Content</label>
       <textarea className="note-content"  name="note-content" value={state.form.description} onChange={handleChange}></textarea>
       {props.update ? <div className="footer">

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar(){
     return (
-        <navbar>
+        <div id="nav">
             <Link to="/add-notes">Create</Link>
             <Link to="/view-notes">View</Link>
-        </navbar>
+        </div>
     )
 }
