@@ -7,8 +7,10 @@ import {
 } from "./actions";
 
 const initialState = {
-  counter: 0,
-  toggle: false,
+  toggle: {
+    formOpen:false,
+    noteId: Number
+  },
   form: {
     id: Number,
     title: "",
@@ -30,20 +32,28 @@ export const reducers = (state = initialState, action) => {
       };
 
     case UPDATE_TOGGLE:
-      let toggleArr = state.notes.map(note => {
-        if (note.id === action.note_id && note.update === false) {
-          return { ...note, update: true }
-        }else  if (note.id === action.note_id && note.update === true) {
-          return { ...note, update: false }
+      if(state.toggle.formOpen === true)
+        return{
+          ...state,
+          toggle:{
+            formOpen: false,
+            noteId: Number
+          },
+          form: {
+            id: Number,
+            title: "",
+            description: ""
+          }
         }
-        else {
-          return note
+        else{
+        return {
+          ...state,
+          toggle:{
+            formOpen: true,
+            noteId: action.note_id
+          }
         }
-      })
-      return {
-        ...state,
-        notes: toggleArr
-      };
+      }
 
       case FORM_CHANGE:
         return{
@@ -54,7 +64,7 @@ export const reducers = (state = initialState, action) => {
       case UPDATE_NOTE:
         let updatedNotes = state.notes.map(note =>{
           if(note.id === state.form.id){
-            return ({...state.form, update:false})
+            return ({...state.form})
           }
          else{
            return note
@@ -68,7 +78,7 @@ export const reducers = (state = initialState, action) => {
 
       case CREATE_NOTE: 
          let newNote = state.notes
-         newNote[newNote.length] = ({...state.form, update: false, id: newNote.length + 1 })
+         newNote[newNote.length] = ({...state.form, id: newNote.length + 1 })
          localStorage.setItem("notes", JSON.stringify(newNote))
          return{
            ...state,
