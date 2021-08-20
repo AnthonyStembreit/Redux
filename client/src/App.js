@@ -14,7 +14,7 @@ export default function App() {
     return (
         <Router>
             <header>
-                <h1>Redux Counter</h1>
+                <h1>Redux Note-Taker</h1>
                 <NavBar/>
             </header>
             <div id="component-body">

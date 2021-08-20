@@ -26,7 +26,7 @@ header{
     justify-content: center;
     padding: 5%
 }
-form{
+form, #note{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -39,17 +39,52 @@ form{
 label{
     font-size: 28px;
     font-weight: 550;
+    padding-bottom: 5px;
 }
-input{
-    padding:12px;
+input, textarea{
+    padding:10px;
     font-size:22px;
     margin-bottom: 15px;
+    border-radius: 4px;
+    border: none;
 }
 textarea{
-    padding: 12px;
+    padding-bottom: 50px;
     font-size: 20px;
-    margin-bottom: 15px;
 }
 button{
     border:none;
 }
+#notes-container{
+    width:70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#note{
+    margin: 10px;
+    flex-flow: wrap;
+    flex: auto;
+    padding-bottom: 15px;
+    min-height: 50%;
+}
+#note h2{
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom: solid black 2px ;
+    width:100%
+}
+#note p {
+    font-size: 25px;
+    margin-top: 25px;
+    width:100%;
+    min-height: 40%;
+}
+#note button{
+    width: 48%;
+    margin:0.5%;
+    margin-bottom: 0%;
+}
+
+

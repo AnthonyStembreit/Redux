@@ -24,7 +24,7 @@ export default function ViewNotes() {
         }
     }
     return (
-        <div>
+        <div id="notes-container">
             {state.notes.map(note => {
                 if (note.id === state.toggle.noteId) {
                     return <NoteForm update={updateToggle}/>
