@@ -26,7 +26,7 @@ header{
     justify-content: center;
     padding: 5%
 }
-form, #note{
+form, .note{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -61,27 +61,27 @@ button{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-#note{
+.note{
     margin: 10px;
     flex-flow: wrap;
     flex: auto;
     padding-bottom: 15px;
     min-height: 50%;
 }
-#note h2{
+.note h2{
     font-size: 32px;
     margin-top: 0px;
     margin-bottom: 0px;
     border-bottom: solid black 2px ;
     width:100%
 }
-#note p {
+.note p {
     font-size: 25px;
     margin-top: 25px;
     width:100%;
     min-height: 40%;
 }
-#note button{
+.note button{
     width: 48%;
     margin:0.5%;
     margin-bottom: 0%;
