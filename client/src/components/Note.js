@@ -12,7 +12,7 @@ export default function Note(props) {
     }
   
     return (
-        <div class="note">
+        <div className="note">
             <h2>{props.note.title}</h2>
             <p>{props.note.description}</p>
             <button value={props.note.id} onClick={deleteNote}>Delete</button>

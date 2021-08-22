@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import store from './utils/store';
@@ -7,13 +7,13 @@ import store from './utils/store';
 import AddNote from './pages/AddNote';
 import ViewNotes from './pages/View-Notes';
 import NavBar from './components/Nav-Bar';
-import './style.css'
+import './style.css';
 
 export default function App() {
 
     return (
         <HashRouter>
-            <header>
+            <header basename="/#/">
                 <h1>Redux Note-Taker</h1>
                 <NavBar/>
             </header>
