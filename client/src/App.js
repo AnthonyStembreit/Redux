@@ -13,7 +13,7 @@ export default function App() {
 
     return (
         <HashRouter>
-            <header basename="/#/">
+            <header>
                 <h1>Redux Note-Taker</h1>
                 <NavBar/>
             </header>
