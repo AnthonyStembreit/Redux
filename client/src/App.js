@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as HashRouter, Route, Switch } from 'react-router-dom'
 
 import { Provider } from 'react-redux';
 import store from './utils/store';
@@ -12,7 +12,7 @@ import './style.css'
 export default function App() {
 
     return (
-        <Router>
+        <HashRouter>
             <header>
                 <h1>Redux Note-Taker</h1>
                 <NavBar/>
@@ -26,6 +26,6 @@ export default function App() {
                     </Switch>
                 </Provider>
             </div>
-        </Router>
+        </HashRouter>
     )
 }
